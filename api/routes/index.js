@@ -4,6 +4,9 @@ const properties = require('./properties');
 const provinces = require('./provinces');
 const proptypes = require('./proptypes');
 const prices = require('./prices');
+const districts = require('./districts');
+const lands = require('./lands');
+const roads = require('./roads');
 
 // middleware to use for all requests
 routes.use((req, res, next) => {
@@ -20,5 +23,8 @@ routes.use('/properties', properties);
 routes.use('/provinces', provinces);
 routes.use('/proptypes', proptypes);
 routes.use('/prices', prices);
+routes.use('/districts', districts);
+routes.use('/lands', lands);
+routes.use('/roads', roads);
 
 module.exports = routes;
