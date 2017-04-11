@@ -5,8 +5,8 @@ const LandSchema = new mongoose.Schema({
     province: { type: String, required: true },
     district: { type: String, required: true },
     road: { type: String, required: true },
-    minPrice: Number,
-    maxPrice: Number
+    minPrice: Number, // หน่วยเป็นตารางวา
+    maxPrice: Number  // หน่วยเป็นตารางวา
 });
 LandSchema.plugin(mongoosePaginate);
 
