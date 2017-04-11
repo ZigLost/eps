@@ -9,7 +9,5 @@
   },
   "author": "ZigLost",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^1.11.0"
-  }
+  "devDependencies": {}
 }
