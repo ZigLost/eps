@@ -7,7 +7,7 @@ module.exports = (req, res) => {
         province: new RegExp(req.params.name, 'i')
     }, (err, props) => {
         if(err) res.send(res);
-        else if(props) res.status(404).send('Property not found');
+        else if(props.length === 0) res.status(404).send('Property not found');
         res.json(props);
     });
 };

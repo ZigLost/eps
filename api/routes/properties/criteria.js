@@ -8,7 +8,7 @@ module.exports = (req, res) => {
         province: req.params.province
     }, (err, props) => {
         if(err) return res.send(err);
-        else if(props) return res.status(404).send('Property not found');
+        else if(props.length === 0) return res.status(404).send('Property not found');
         res.json(props);
     });
 };

@@ -5,7 +5,7 @@ const Property = require('../../../models/Property');
 module.exports = (req, res) => {
     Property.remove({ _id: req.params.id }, (err, prop) => {
         if(err) res.send(err);
-        else if(props) res.status(404).send('Property not found');
+        else if(props.length === 0) res.status(404).send('Property not found');
         res.json({ message: 'Successfully delete property' });
     });
 };
