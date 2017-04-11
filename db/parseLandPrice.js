@@ -2,6 +2,8 @@ const lineReader = require('line-reader');
 const Promise = require('bluebird');
 const fs = require('fs');
 const path = require('path');
+const db = require('../api/db');
+const Land = require('../models/Land');
 
 let importedFile = './sourcefiles/นนทบุรี.txt',
     errorFile = './error.json',
@@ -41,6 +43,8 @@ eachLine(importedFile, (line) => {
     lands.push(land);
 }).then((err) => {
     if(err) throw err;
-    //console.log(lands);
-    fs.writeFile(outFile, JSON.stringify(lands));
+    //fs.writeFile(outFile, JSON.stringify(lands));
+    Land.insertMany(lands, (err, props) => {
+        if(err) console.log(err);
+    });
 });
