@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoosePaginate = require('mongoose-paginate');
 
-const PropertySchema = new Schema({
+const PropertySchema = new mongoose.Schema({
     propertyType: { type: String, required: true },
     province: { type: String, required: true },
     price: Number,
     remark: String
 });
+PropertySchema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model('Property', PropertySchema);
